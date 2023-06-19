@@ -4,8 +4,8 @@ let imgList = Array.from(document.querySelectorAll(".slider__item"));
 let dotList = Array.from(document.querySelectorAll(".slider__dot"));
 
 let clearActiveClass = () => {
-    imgList.forEach((element) => element.classList.remove("slider__item"));
-    dotList.forEach((element) => element.classList.remove("slider__dot"));
+    imgList.forEach((element) => element.classList.remove("slider__item_active"));
+    dotList.forEach((element) => element.classList.remove("slider__dot_active"));
 };
 
 let addActiveClass = (j) => {
@@ -13,7 +13,7 @@ let addActiveClass = (j) => {
     dotList[j].classList.add("slider__dot_active");
 };
 
-leftBtn.onclick = () => {
+rightBtn.onclick = () => {
     let i = imgList.findIndex((element) =>
       element.classList.contains("slider__item_active")
     );
@@ -24,7 +24,7 @@ leftBtn.onclick = () => {
     addActiveClass(i + 1);
 };
 
-rightBtn.onclick = () => {
+leftBtn.onclick = () => {
     let i = imgList.findIndex((element) =>
       element.classList.contains("slider__item_active")
     );
